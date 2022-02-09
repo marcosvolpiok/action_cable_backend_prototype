@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
+
   get 'chat' => 'chat#index'
 end
